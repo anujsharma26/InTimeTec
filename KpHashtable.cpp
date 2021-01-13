@@ -34,8 +34,8 @@ void list_init(linked_list **list)
 int get_hash_code(char *key)
 {
     int index = key - '0';
-    int hash = index % 100;
-    return hash;
+    index %= 100;
+    return index;
 }
 
 void put(void *hashtable[], char *key, char *value)
